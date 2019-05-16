@@ -129,8 +129,8 @@ static int xma_config_props(AVFilterLink *outlink)
 
 
     if (outlink->time_base.den > 0) {
-        int fpsNum = outlink->time_base.den;
-        int fpsDenom = outlink->time_base.num;
+        int fpsNum = outlink->frame_rate.num;
+        int fpsDenom = outlink->frame_rate.den;
         int fps = fpsNum/fpsDenom;
         printf("fps set as %d/%d=%d\n",outlink->frame_rate.num,outlink->frame_rate.den,fps);
         s->fps = fps;
